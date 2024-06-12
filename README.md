@@ -5,7 +5,7 @@ This is a data science project for DSC80 at UC San Diego. We decided to analyze 
 
 ---
 ## Topic and Introduction
-The dataset comprises detailed information from food.com, focusing on recipes submitted since 2008. This timeframe provides us with the most relevant and contemporary eating trends that reflect current nutritional awareness and preferences. **Our main goal of this project is to detrmine which recipes are healthy based on the nutritional facts** This goal is significant because understanding the nutritional value of meals can help individuals make informed choices about their diets, supporting their fitness and health goals. By analyzing the nutritional content, we can identify recipes that align with dietary guidelines and promote overall health.
+The dataset comprises detailed information from food.com, focusing on recipes submitted since 2008. This timeframe provides us with the most relevant and contemporary eating trends that reflect current nutritional awareness and preferences. **Our main goal of this project is to determine which recipes are healthy based on the nutritional facts** This goal is significant because understanding the nutritional value of meals can help individuals make informed choices about their diets, supporting their fitness and health goals. By analyzing the nutritional content, we can identify recipes that align with dietary guidelines and promote overall health.
 
 ### Introduction to the Datasets in this Study
 Recipes Dataset: The first data set we are using contains the information of 83,782 recipes from 2008 to 2018 on food.com, with the following relevant columns:
@@ -48,6 +48,8 @@ In order to increase the readability and accuracy of our data, we followed the f
 6. **We identified recipes tagged as `healthy` based on the tags column.**: Identifying recipes tagged as "healthy" allows us to analyze their nutritional content and user ratings, providing insights into user perceptions of healthy recipes.
 7. **We filled missing descriptions with `No description available` and checked for missing values in other columns.**: Filling missing descriptions ensures all recipes have a description, improving data completeness. Checking for missing values in other columns highlights any remaining data quality issues.
 
+Here is the head of our cleaned dataframe:
+
 | average_rating | calories | total_fat | sugar | sodium | protein | saturated_fat  | carbohydrates | PtoCarb_ratio | PtoCal_ratio | is_healthy |
 |----------------|----------|-----------|-------|--------|---------|----------------|---------------|---------------|--------------|------------|
 | 4.0            | 138.4    | 10.0      | 50.0  | 3.0    | 3.0     | 19.0           | 6.0           | 0.500000      | 0.021676     | False      |
@@ -62,11 +64,8 @@ These steps were critical in preparing our data for analysis, ensuring the accur
 
 ### Univariate Analysis
 
-
-
-#### Distribution of Protein 
 <iframe
-  src="assets/protein_by_avg.html"
+  src="assets/carbs_vs_avgrat.html"
   width="800"
   height="600"
   frameborder="0"
