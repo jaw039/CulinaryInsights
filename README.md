@@ -71,19 +71,28 @@ These steps were critical in preparing our data for analysis, ensuring the accur
   frameborder="0"
 ></iframe>
 
-
-#### Distribution of Calories
-
+This plot allows us to explore how the carbohydrate content in recipes might affect user satisfaction, as reflected by their ratings. 
 
 ### Bivariate Analysis
 
+<iframe
+  src="assets/CaloriesByAvg.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
-
+This plot suggests that higher-rated recipes tend to have higher calorie content, especially among non-healthy recipes. However, healthy recipes maintain a lower calorie count consistently, regardless of their rating. This insight can be useful for understanding how calorie content influences user ratings and the perception of healthiness in recipes.
 
 ### Interesting Aggregates
 
+| is_healthy | PtoCal_ratio | PtoCarb_ratio | calories   | carbohydrates | protein    | saturated_fat | sodium    | sugar     | total_fat |
+|------------|--------------|---------------|------------|---------------|------------|---------------|-----------|-----------|-----------|
+| False      | 0.079061     | 6.067121      | 450.084108 | 12.913191     | 34.876118  | 46.819121     | 29.026477 | 65.364843 | 37.296644 |
+| True       | 0.074865     | 2.762035      | 344.691962 | 17.480654     | 25.764166  | 12.442336     | 28.583125 | 82.616575 | 12.872941 |
 
 
+This pivot table provides a clear comparison of nutritional components between healthy and non-healthy recipes, offering insights into what differentiates these categories.
 
 ---
 ## Assessment of Missingness
