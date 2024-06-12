@@ -40,16 +40,24 @@ In our project, we mainly used two columns from the recipes dataset:`nutrition`a
 ### Data Cleaning
 In order to increase the readability and accuracy of our data, we followed the following steps to clean our DataFrame:
 
-1. **Left merge the recipes and interactions datasets together.**
-2. **In the merged dataset, we replaced all ratings of 0 with np.nan to handle missing values appropriately.**
-3. **We calculated the average rating for each recipe.**
-4. **We converted the nutrition column to separate columns for calories, total fat, sugar, sodium, protein, saturated fat, and carbohydrates.**
-5. **We calculated the protein-to-carbohydrates and protein-to-calories ratios.**
-6. **We identified recipes tagged as `healthy` based on the tags column.**
-7. **We filled missing descriptions with `No description available` and checked for missing values in other columns.**
+1. **Left merge the recipes and interactions datasets together.**: This step was necessary to match user comments and ratings with the corresponding recipes, enabling easier comparisons and comprehensive analysis.
+2. **In the merged dataset, we replaced all ratings of 0 with np.nan to handle missing values appropriately.**: Ratings of 0 generally indicate missing values as the lowest valid rating on most websites is 1. Replacing these with np.nan prevents skewed analysis due to invalid ratings.
+3. **We calculated the average rating for each recipe.**: Calculating the average rating for each recipe helps summarize user feedback and allows us to compare recipes based on user satisfaction.
+4. **We converted the nutrition column to separate columns for calories, total fat, sugar, sodium, protein, saturated fat, and carbohydrates.**: This step makes it easier to analyze individual nutritional components and their impact on healthiness and user ratings.
+5. **We calculated the protein-to-carbohydrates and protein-to-calories ratios.**: These ratios provide additional metrics for evaluating the nutritional balance of recipes, helping identify healthier options.
+6. **We identified recipes tagged as `healthy` based on the tags column.**: Identifying recipes tagged as "healthy" allows us to analyze their nutritional content and user ratings, providing insights into user perceptions of healthy recipes.
+7. **We filled missing descriptions with `No description available` and checked for missing values in other columns.**: Filling missing descriptions ensures all recipes have a description, improving data completeness. Checking for missing values in other columns highlights any remaining data quality issues.
+
+| average_rating | calories | total_fat | sugar | sodium | protein | saturated_fat  | carbohydrates | PtoCarb_ratio | PtoCal_ratio | is_healthy |
+|----------------|----------|-----------|-------|--------|---------|----------------|---------------|---------------|--------------|------------|
+| 4.0            | 138.4    | 10.0      | 50.0  | 3.0    | 3.0     | 19.0           | 6.0           | 0.500000      | 0.021676     | False      |
+| 5.0            | 595.1    | 46.0      | 211.0 | 22.0   | 13.0    | 51.0           | 26.0          | 0.500000      | 0.021845     | False      |
+| 5.0            | 194.8    | 20.0      | 6.0   | 32.0   | 22.0    | 36.0           | 3.0           | 7.333333      | 0.112936     | False      |
+| 5.0            | 878.3    | 63.0      | 326.0 | 13.0   | 20.0    | 123.0          | 39.0          | 0.512821      | 0.022771     | False      |
+| 5.0            | 267.0    | 30.0      | 12.0  | 12.0   | 29.0    | 48.0           | 2.0           | 14.500000     | 0.108614     | False      |
 
 
-
+These steps were critical in preparing our data for analysis, ensuring the accuracy and completeness of the dataset, and allowing us to draw meaningful insights about the healthiness of recipes based on their nutritional content.
 
 
 ### Univariate Analysis
