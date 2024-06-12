@@ -5,7 +5,7 @@ This is a data science project for DSC80 at UC San Diego. We decided to analyze 
 
 ---
 ## Topic and Introduction
-The dataset comprises detailed information from food.com, focusing on recipes submitted since 2008. This timeframe provides us with the most relevant and contemporary eating trends that reflect current nutritional awareness and preferences. **Our main goal of this project is to determine which recipes are healthy based on the nutritional facts** This goal is significant because understanding the nutritional value of meals can help individuals make informed choices about their diets, supporting their fitness and health goals. By analyzing the nutritional content, we can identify recipes that align with dietary guidelines and promote overall health.
+The dataset comprises detailed information from food.com, focusing on recipes submitted since 2008. This timeframe provides us with the most relevant and contemporary eating trends that reflect current nutritional awareness and preferences. **Our main goal of this project is to determine is there a relationship between the nutritional content of a recipe and its average rating?** This goal is significant because understanding the nutritional value of meals can help individuals make informed choices about their diets, supporting their fitness and health goals. By analyzing the nutritional content, we can identify recipes that align with dietary guidelines and promote overall health.
 
 ### Introduction to the Datasets in this Study
 Recipes Dataset: The first data set we are using contains the information of 83,782 recipes from 2008 to 2018 on food.com, with the following relevant columns:
@@ -98,13 +98,40 @@ This pivot table provides a clear comparison of nutritional components between h
 ## Assessment of Missingness
 ### NMAR Analysis
 
+In our dataset, the `average_rating` column is suspected to be NMAR, where the missingness potentially depends on the ratings themselves. A plausible reason for this pattern could be that users are less likely to leave a rating for recipes that they found disappointing or difficult to execute successfully. This tendency could lead to a disproportionately high number of missing ratings for recipes that did not meet users' expectations or were too complex to prepare satisfactorily. 
 
+To further investigate, an analysis could be conducted to compare the complexity of recipes (number of ingredients, prep time) and the user engagement metrics (completion rate). 
 
 
 ### Missingness Dependency
 
+1. n_steps TVD Analysis:
 
+    Observed TVD: The red dashed line at TVD = 0.43 indicates the observed difference in the distribution of the 'n_steps' between recipes with and without ratings.
+    Permutation TVDs: Represented in blue, these show the distribution of TVDs calculated from randomly shuffling the missingness of the 'average_rating' and recalculating the TVD many times.
+    Interpretation: The observed TVD is significantly higher than most of the permutation TVDs, as it lies far to the right of the bulk of the blue histogram. This suggests that the difference in 'n_steps' for recipes with and without ratings is greater than what would be expected by chance, indicating that the missingness in 'average_rating' might be dependent on 'n_steps'.
 
+<iframe
+  src="assets/N-stepTVD.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>  
+
+2. Minutes TVD Analysis:
+
+    Observed TVD: Here, the red dashed line at TVD = 0.0 shows almost no observed difference in the distribution of `minutes` between recipes with and without ratings.
+    Permutation TVDs: The bulk of these values are close to zero, similar to the observed TVD.
+    Interpretation: Since the observed TVD is well within the range of the permutation TVDs, this suggests that there is no significant association between the missingness of `average_rating` and the `minutes` it takes to prepare a recipe. The missingness in `average_rating` does not appear to be dependent on `minutes`.
+
+<iframe
+  src="assets/minsTVD.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>  
+
+We conclude that the missingness of `average_rating` is likely independent of the preparation time (`minutes`) listed for the recipes. This suggests that other factors not captured by the `minutes` variable might influence whether a user decides to rate a recipe
 
 ---
 ## Hypothesis Testing
