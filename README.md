@@ -32,3 +32,54 @@ The other data set we used contains people's opinions to recipes on food.com, wh
 |`'date'`	|Date of interaction|
 |`'rating'`	|Rating given|
 |`'review'`	|Review text|
+
+
+---
+## Cleaning Data and Exploratory Data Analysis
+### Data Cleaning
+
+
+
+
+
+### Univariate Analysis
+
+
+
+#### Distribution of Protein 
+<iframe
+  src="assets/protein_by_avg.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+
+#### Distribution of Calories
+
+
+### Bivariate Analysis
+
+
+
+
+### Interesting Aggregates
+
+
+
+
+---
+## Assessment of Missingness
+### NMAR Analysis
+
+
+
+
+### Missingness Dependency
+
+
+
+
+---
+## Hypothesis Testing
+### Permutation Test
