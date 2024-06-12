@@ -33,11 +33,20 @@ Interactions Dataset: Contains 731,927 total reviews with the following relevant
 |`'rating'`	|Rating given|
 |`'review'`	|Review text|
 
-In our project, we mainly used two columns from the recipes dataset:"nutrition" and "recipes". The "nutrition" columns contains information about calories, total fat, sugar, sodium, protein, saturated fat, carbohydrates. We extracted these values into separate columns for detailed analysis. And we also used the "recipes" column to identify recipes tagged as "healthy".
+In our project, we mainly used two columns from the recipes dataset:`nutrition`and `recipes`. The `nutrition` columns contains information about calories, total fat, sugar, sodium, protein, saturated fat, carbohydrates. We extracted these values into separate columns for detailed analysis. And we also used the `recipes` column to identify recipes tagged as `healthy`.
 
 ---
 ## Cleaning Data and Exploratory Data Analysis
 ### Data Cleaning
+In order to increase the readability and accuracy of our data, we followed the following steps to clean our DataFrame:
+
+1. **Left merge the recipes and interactions datasets together.**
+2. **In the merged dataset, we replaced all ratings of 0 with np.nan to handle missing values appropriately.**
+3. **We calculated the average rating for each recipe.**
+4. **We converted the nutrition column to separate columns for calories, total fat, sugar, sodium, protein, saturated fat, and carbohydrates.**
+5. **We calculated the protein-to-carbohydrates and protein-to-calories ratios.**
+6. **We identified recipes tagged as `healthy` based on the tags column.**
+7. **We filled missing descriptions with `No description available` and checked for missing values in other columns.**
 
 
 
