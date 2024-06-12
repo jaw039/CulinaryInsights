@@ -1,14 +1,14 @@
 # CulinaryInsights
 **Authors**: Jackie Wang, Brandon Ng
 ## Project Overview
-We chose this dataset because we both not only have a passion for working out and staying fit, but as well as a passion for cooking and a strong interest in healthy eating. Analyzing this data allows us to discover new recipes to try in our own kitchen and to better understand the nutritional value and benefits of different foods. This knowledge can helps us make informed choices to support our fitness goals while still enjoying delicious and healthy meals.
+This is a data science project for DSC80 at UC San Diego. We decided to analyze this data as it allows us to discover new recipes to try in our own kitchen and better understand the nutritional value and benefits of different foods. This knowledge helps us make informed choices to support our fitness goals while still enjoying delicious and healthy meals.
 
 ---
-## Investigating Topic and Introduction
-
+## Topic and Introduction
+The dataset comprises detailed information from food.com, focusing on recipes submitted since 2008. This timeframe provides us with the most relevant and contemporary eating trends that reflect current nutritional awareness and preferences. **Our main goal of this project is to detrmine which recipes are healthy based on the nutritional facts** This goal is significant because understanding the nutritional value of meals can help individuals make informed choices about their diets, supporting their fitness and health goals. By analyzing the nutritional content, we can identify recipes that align with dietary guidelines and promote overall health.
 
 ### Introduction to the Datasets in this Study
-The first data set we are using contains the information of 83782 recipes from 2008 to 2018 on food.com, with 10 columns recording the following information:
+Recipes Dataset: The first data set we are using contains the information of 83,782 recipes from 2008 to 2018 on food.com, with the following relevant columns:
 
 |Column	                 |Description|
 |---                     |---        |
@@ -23,7 +23,7 @@ The first data set we are using contains the information of 83782 recipes from 2
 |`'steps'`	              |Text for recipe steps, in order|
 |`'description'`	     | User-provided description|
 
-The other data set we used contains people's opinions to recipes on food.com, which is consists of 731,927 total reviews. It consists of 5 different columns as listed below:
+Interactions Dataset: Contains 731,927 total reviews with the following relevant columns:
 
 |Column|Description|
 |---|---|
@@ -33,6 +33,7 @@ The other data set we used contains people's opinions to recipes on food.com, wh
 |`'rating'`	|Rating given|
 |`'review'`	|Review text|
 
+In our project, we mainly used two columns from the recipes dataset:"nutrition" and "recipes". The "nutrition" columns contains information about calories, total fat, sugar, sodium, protein, saturated fat, carbohydrates. We extracted these values into separate columns for detailed analysis. And we also used the "recipes" column to identify recipes tagged as "healthy".
 
 ---
 ## Cleaning Data and Exploratory Data Analysis
