@@ -65,6 +65,15 @@ These steps were critical in preparing our data for analysis, ensuring the accur
 ### Univariate Analysis
 
 <iframe
+  src="assets/satfat.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+This plot illustrates the relationship between saturated fat content and average recipe ratings, revealing that most recipes across all rating levels contain low levels of saturated fat, with occasional high-fat outliers in higher-rated categories. 
+
+<iframe
   src="assets/carbs_vs_avgrat.html"
   width="800"
   height="600"
@@ -83,6 +92,15 @@ This plot allows us to explore how the carbohydrate content in recipes might aff
 ></iframe>
 
 This plot suggests that higher-rated recipes tend to have higher calorie content, especially among non-healthy recipes. However, healthy recipes maintain a lower calorie count consistently, regardless of their rating. This insight can be useful for understanding how calorie content influences user ratings and the perception of healthiness in recipes.
+
+<iframe
+  src="assets/sugar.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+This graph displays the sugar content in recipes categorized by their average rating and healthiness status, with red bars representing recipes considered unhealthy due to higher sugar levels and blue bars representing those considered healthy. A notable observation is that recipes rated 3 and 4, regardless of their health status, consistently contain high amounts of sugar, suggesting that sugar content may be a significant factor in user satisfaction for these particular ratings. 
 
 ### Interesting Aggregates
 
