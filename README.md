@@ -160,6 +160,13 @@ We will use a significance level of 0.05 since it is the standard convention.
 
 Test Statistic: We will use the difference in means of protein content between high-rated and low-rated recipes as our test statistic.
 
+<iframe
+  src="assets/hyptest.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>  
+
 
 ### Permutation Test
 
