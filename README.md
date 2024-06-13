@@ -125,7 +125,7 @@ To further investigate, an analysis could be conducted to compare the complexity
     Interpretation: Since the observed TVD is well within the range of the permutation TVDs, this suggests that there is no significant association between the missingness of `average_rating` and the `minutes` it takes to prepare a recipe. The missingness in `average_rating` does not appear to be dependent on `minutes`.
 
 <iframe
-  src="assets/minsTVD.html"
+  src="assets/minutesTVD.html"
   width="800"
   height="600"
   frameborder="0"
