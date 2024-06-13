@@ -248,4 +248,4 @@ Significance Level: 0.05
 
 The p-value obtained from the permutation test is 0.668, which is greater than the chosen significance level of 0.05. This indicates that the observed difference in precision between the high and low rating groups is not statistically significant.
 
-This indicates that the precision of the model is consistent across different rating groups, affirming that the model performs fairly in terms of identifying unhealthy recipes regardless of their popularity or user ratings.
+Since the result is not significant, we fail to reject the null hypothesis and thus conclude that the model has fair precision performance between recipes with high and low average ratings.
