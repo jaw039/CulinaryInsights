@@ -135,4 +135,83 @@ We conclude that the missingness of `average_rating` is likely independent of th
 
 ---
 ## Hypothesis Testing
+
+Null Hypothesis: There is no difference in the average protein content between recipes with higher ratings (greater than or equal to 4) and those with lower ratings (less than 4). The observed difference in means is due to random chance.
+
+Alternative Hypothesis (H₁): There is a statistically significant difference in the average protein content between recipes with higher ratings and those with lower ratings.
+
+We will use a significance level of 0.05 since it is the standard convention. 
+
+Test Statistic: We will use the difference in means of protein content between high-rated and low-rated recipes as our test statistic.
+
+
 ### Permutation Test
+
+The permutation test involves randomly shuffling the 'average_rating' values among the recipes multiple times (100 times in this instance), recalculating the mean difference for each permutation. This approach helps us understand if the observed difference could have occurred by chance.
+
+<iframe
+  src="assets/diffinMeans.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>  
+
+The observed p-value is significantly higher than the conventional alpha level of 0.05. This result leads us to fail to reject the null hypothesis, suggesting that the difference in protein content between high-rated and low-rated recipes is not statistically significant and could indeed be due to random variation.
+
+Given the p-value and the context of our data, these findings indicate that users' ratings may not be influenced by the protein content of the recipes, or possibly, users do not consistently prefer recipes with higher or lower protein content.
+
+### Framing a Prediction Problem
+
+Problem Type: classification problem
+
+We plan to predict whether a recipe is healthy or not (binary: healthy or not healthy). This is identified by the column `is_healthy` in our dataset, which is marked as True if the recipe is healthy, and False.
+
+We use nutritional content details such as:
+`Calories`, `Total Fat`, `Sugar`, `Sodium`, `Protein`, `Saturated Fat` and `Carbohydrates`
+
+We chose the F1-Score because it balances the precision and recall, which is crucial for our dataset, given the potential imbalance between healthy and not healthy recipes. The F1-score helps us to evaluate the model's accuracy in predicting both classes fairly.
+
+### Baseline Model 
+
+Model: Random Forest Classifier
+
+Features in the Model:
+
+    Protein (Quantitative)
+    Carbohydrates (Quantitative)
+
+The model utilizes two quantitative features: protein and carbohydrates. These nutrients were selected due to their potential to influence the healthiness of a recipe. Both features were normalized using the StandardScaler to ensure that the model does not bias towards features with inherently larger values.
+
+<iframe
+  src="assets/baselineModel.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>  
+
+The F1-Score across Categories shows that the model categorizes 'is_healthy = false' more effectively than 'is_healthy = true', likely due to the number of data points in each group as most recipes are labeled as 'not healthy'.
+
+The F1-Score: Indicates low precision (many false positives) and/or low recall (many false negatives), suggesting that the model's performance is not optimal for reliable classification.
+
+Cross-Validation:
+    Cross-validation scores indicate that the model is stable and performs consistently well across different subsets of the data, underscoring its robustness
+
+### Final Model
+
+The features used in the final model were average rating, protein to carbohydrate ratio, calories, carbohydrates, protein, saturated fat, sugar, and total fat. These nutritional features are likely to be good predictors of whether a recipe is healthy or not, since the healthiness of a recipe is largely determined by its nutritional composition. Calories, fat, sugar and carbohydrate content are commonly used to assess the healthiness of foods. The protein to carbohydrate ratio captures the balance of macronutrients, which is important for a healthy diet. And the average rating may indirectly reflect recipe healthiness, as users might rate healthier recipes more highly on average.
+
+The modeling algorithm chosen was a Random Forest Classifier. The hyperparameters were tuned using grid search, with the best performing values being a max depth of 12 and 125 estimators.
+
+The final model shows substantial improvement compared to the baseline model:
+
+Test accuracy increased from 79.6% to 82.6%
+The F1 score drastically improved from 0.0929 to 0.3873
+The F1 score for identifying healthy recipes jumped from 0.0929 to 0.3873
+5-fold cross validation scores increased by ~3% on average, showing the model is more consistent
+
+<iframe
+  src="assets/FinalModel.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>  
