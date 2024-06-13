@@ -73,6 +73,9 @@ These steps were critical in preparing our data for analysis, ensuring the accur
 
 This plot allows us to explore how the carbohydrate content in recipes might affect user satisfaction, as reflected by their ratings. 
 
+While most recipes cluster at lower carbohydrate levels across all ratings, there are notable spikes in higher carbohydrate counts especially in the higher ratings (4 and 5).
+
+
 ### Bivariate Analysis
 
 <iframe
