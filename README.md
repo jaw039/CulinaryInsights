@@ -167,6 +167,7 @@ Test Statistic: We will use the difference in means of protein content between h
   frameborder="0"
 ></iframe>  
 
+The plot presented illustrates the empirical distribution of the difference in means of protein content between recipes with high ratings (greater than or equal to 4) and those with lower ratings (less than 4). The histogram shows the distribution of differences obtained through permutation testing, where the protein content of the recipes was randomly shuffled and recalculated across multiple iterations.
 
 ### Permutation Test
 
