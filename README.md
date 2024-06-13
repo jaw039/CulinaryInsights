@@ -149,13 +149,6 @@ Test Statistic: We will use the difference in means of protein content between h
 
 The permutation test involves randomly shuffling the 'average_rating' values among the recipes multiple times (100 times in this instance), recalculating the mean difference for each permutation. This approach helps us understand if the observed difference could have occurred by chance.
 
-<iframe
-  src="assets/diffinMeans.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>  
-
 The observed p-value is significantly higher than the conventional alpha level of 0.05. This result leads us to fail to reject the null hypothesis, suggesting that the difference in protein content between high-rated and low-rated recipes is not statistically significant and could indeed be due to random variation.
 
 Given the p-value and the context of our data, these findings indicate that users' ratings may not be influenced by the protein content of the recipes, or possibly, users do not consistently prefer recipes with higher or lower protein content.
@@ -182,8 +175,6 @@ Features in the Model:
 
 The model utilizes two quantitative features: protein and carbohydrates. These nutrients were selected due to their potential to influence the healthiness of a recipe. Both features were normalized using the StandardScaler to ensure that the model does not bias towards features with inherently larger values.
 
-![Alt text](baselinemodel)
-
 
 The F1-Score across Categories shows that the model categorizes 'is_healthy = false' more effectively than 'is_healthy = true', likely due to the number of data points in each group as most recipes are labeled as 'not healthy'.
 
@@ -204,10 +195,3 @@ Test accuracy increased from 79.6% to 82.6%
 The F1 score drastically improved from 0.0929 to 0.3873
 The F1 score for identifying healthy recipes jumped from 0.0929 to 0.3873
 5-fold cross validation scores increased by ~3% on average, showing the model is more consistent
-
-<iframe
-  src="assets/FinalModel.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>  
