@@ -103,6 +103,10 @@ This graph displays the sugar content in recipes categorized by their average ra
 
 This pivot table provides a clear comparison of nutritional components between healthy and non-healthy recipes, offering insights into what differentiates these categories.
 
+For example, the Protein to Calorie ratio (PtoCal_ratio) and Protein to Carbohydrate ratio (PtoCarb_ratio) are notably higher in unhealthy recipes, indicating a possibly higher protein content relative to calories and carbohydrates compared to their healthy counterparts. 
+
+The data reveals that despite similar sodium levels, healthy recipes generally have lower total fat and significantly less saturated fat. 
+
 ---
 ## Assessment of Missingness
 ### NMAR Analysis
