@@ -65,15 +65,6 @@ These steps were critical in preparing our data for analysis, ensuring the accur
 ### Univariate Analysis
 
 <iframe
-  src="assets/satfat.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>
-
-This plot illustrates the relationship between saturated fat content and average recipe ratings, revealing that most recipes across all rating levels contain low levels of saturated fat, with occasional high-fat outliers in higher-rated categories. 
-
-<iframe
   src="assets/carbs_vs_avgrat.html"
   width="800"
   height="600"
