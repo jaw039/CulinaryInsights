@@ -182,7 +182,7 @@ Features in the Model:
 
 The model utilizes two quantitative features: protein and carbohydrates. These nutrients were selected due to their potential to influence the healthiness of a recipe. Both features were normalized using the StandardScaler to ensure that the model does not bias towards features with inherently larger values.
 
-![Alt text](baselineModel)
+![Alt text](baselinemodel)
 
 
 The F1-Score across Categories shows that the model categorizes 'is_healthy = false' more effectively than 'is_healthy = true', likely due to the number of data points in each group as most recipes are labeled as 'not healthy'.
