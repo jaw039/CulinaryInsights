@@ -7,7 +7,7 @@ This is a data science project for DSC80 at UC San Diego. We decided to analyze 
 ## Topic and Introduction
 The dataset comprises detailed information from food.com, focusing on recipes submitted since 2008. This timeframe provides us with the most relevant and contemporary eating trends that reflect current nutritional awareness and preferences. **Our main goal of this project is to determine is there a relationship between the nutritional content of a recipe and its average rating?** This goal is significant because understanding the nutritional value of meals can help individuals make informed choices about their diets, supporting their fitness and health goals. By analyzing the nutritional content, we can identify recipes that align with dietary guidelines and promote overall health.
 
-### Introduction to the Datasets in this Study
+### Introduction 
 Recipes Dataset: The first data set we are using contains the information of 83,782 recipes from 2008 to 2018 on food.com, with the following relevant columns:
 
 |Column	                 |Description|
@@ -36,7 +36,7 @@ Interactions Dataset: Contains 731,927 total reviews with the following relevant
 In our project, we mainly used two columns from the recipes dataset:`nutrition`and `recipes`. The `nutrition` columns contains information about calories, total fat, sugar, sodium, protein, saturated fat, carbohydrates. We extracted these values into separate columns for detailed analysis. And we also used the `recipes` column to identify recipes tagged as `healthy`.
 
 ---
-## Cleaning Data and Exploratory Data Analysis
+## Data Cleaning and Exploratory Data Analysis
 ### Data Cleaning
 In order to increase the readability and accuracy of our data, we followed the following steps to clean our DataFrame:
 
