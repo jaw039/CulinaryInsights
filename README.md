@@ -195,3 +195,36 @@ Test accuracy increased from 79.6% to 82.6%
 The F1 score drastically improved from 0.0929 to 0.3873
 The F1 score for identifying healthy recipes jumped from 0.0929 to 0.3873
 5-fold cross validation scores increased by ~3% on average, showing the model is more consistent
+
+### Fairness Analysis 
+
+Assessing the precision parity of the model across varying average ratings is essential, especially in correctly distinguishing between healthy and unhealthy recipes. This distinction holds significant importance due to its direct impact on users' health choices. False positives, in particular, pose a serious concern as they can lead users astray when seeking nutritious meal options.
+
+For example, if recipes with high calorie counts are inaccurately labeled as healthy, users might be misled into consuming them under the false assumption that they are beneficial. This could result in unintended consequences such as weight gain or decreased energy levels, directly contradicting their health goals. Moreover, false positives not only fail to promote health but also actively endorse recipes that do not align with nutritional guidelines.
+
+Therefore, ensuring the model's precision in identifying unhealthy recipes, especially those potentially misleadingly labeled as healthy, is crucial. This not only safeguards users from adverse health outcomes but also supports their efforts in making informed dietary choices based on accurate nutritional information.
+
+Null Hypothesis: Our model is fair. The precision for recipes with higher average ratings and lower average ratings is approximately equal, and any differences observed are solely due to random chance.
+
+H0: Phigh = Plow
+
+Alternative Hypothesis: Our model is unfair. The precision for recipes with lower average ratings is lower than the precision for recipes with higher average ratings.
+
+H0: Phigh > Plow
+
+Test Statistic: Difference in precision between recipes with higher average ratings and recipes with lower average ratings (Phigh − Plow)
+
+Significance Level: 0.05
+
+<iframe
+  src="assets/fairness.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>  
+
+The p-value obtained from the permutation test is 0.668, which is greater than the chosen significance level of 0.05. This indicates that the observed difference in precision between the high and low rating groups is not statistically significant.
+
+Since the result is not significant, we fail to reject the null hypothesis. There is insufficient evidence to conclude that the model has unequal precision performance between recipes with high and low average ratings.
+
+Based on the defined groups, evaluation metric, and significance level, the model appears to be fair in terms of precision parity across recipes with different average ratings. 
